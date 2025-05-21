@@ -1,0 +1,121 @@
+/* style.css */
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f9f9f9;
+    color: #222;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  body.dark {
+    background-color: #121212;
+    color: #f0f0f0;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(to right, #004e92, #00c6ff);
+    color: white;
+    padding: 1rem 2rem;
+  }
+  
+  .dashboard-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    padding: 2rem;
+  }
+  
+  .card {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 220px;
+    text-align: center;
+    transition: transform 0.3s;
+  }
+  
+  .card i {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: #004e92;
+  }
+  
+  .card:hover {
+    transform: scale(1.05);
+  }
+  
+  .form-section, .table-section, .chart-section {
+    padding: 2rem;
+  }
+  
+  form {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    max-width: 600px;
+    margin-top: 1rem;
+  }
+  
+  input, button {
+    padding: 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    width: 100%;
+  }
+  
+  button {
+    background-color: #004e92;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  button:hover {
+    background-color: #00366f;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+  }
+  
+  th, td {
+    border: 1px solid #ccc;
+    padding: 0.75rem;
+    text-align: left;
+  }
+  
+  th {
+    background-color: #004e92;
+    color: white;
+  }
+  
+  canvas {
+    max-width: 100%;
+    margin-top: 2rem;
+  }
+  
+  @media (max-width: 768px) {
+    .dashboard-cards {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    form {
+      flex-direction: column;
+    }
+  
+    .card {
+      width: 90%;
+    }
+  }
+  

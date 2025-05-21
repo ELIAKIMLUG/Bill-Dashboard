@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fuel Management Dashboard</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header">
+    <h1>Fuel Management Dashboard</h1>
+    <!--<button onclick="document.body.classList.toggle('dark')">🌙 Toggle Dark Mode</button>-->
+  </header>
+
+  <section class="dashboard-cards">
+    <div class="card">
+      <i class="fas fa-thermometer-half"></i>
+      <h3>Temperature</h3>
+      <p id="temperature">Loading...</p>
+    </div>
+    <div class="card">
+      <i class="fas fa-cloud"></i>
+      <h3>Weather</h3>
+      <p id="weather">Loading...</p>
+    </div>
+    <div class="card">
+      <i class="fas fa-gas-pump"></i>
+      <h3>Price per Litre</h3>
+      <p>TSh 2569.04</p>
+    </div>
+    <div class="card">
+      <i class="fas fa-chart-line"></i>
+      <h3>Total Sales</h3>
+      <p id="total-sales">0</p>
+    </div>
+    <div class="card">
+      <i class="fas fa-cash-register"></i>
+      <h3>Total Cash (TSh)</h3>
+      <p id="total-cash">0.00</p>
+    </div>
+    <div class="card">
+      <i class="fas fa-oil-can"></i>
+      <h3>Fuel Reserved (L)</h3>
+      <p id="fuel-reserved">10000.00</p>
+    </div>
+  </section>
+
+  <section class="form-section">
+    <h2>Log Fuel Sale</h2>
+    <form onsubmit="handleFuelForm(event)">
+      <input type="text" id="customer-name" placeholder="Customer Name" required />
+      <input type="number" id="litres" placeholder="Litres Filled" required />
+      <button type="submit">Log Sale</button>
+    </form>
+  </section>
+
+  <section class="table-section">
+    <h2>Customer Sales</h2>
+    <table id="customer-table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Litres</th>
+          <th>Amount</th>
+          <th>Time</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Sales will be added here -->
+      </tbody>
+    </table>
+  </section>
+
+  <section class="chart-section">
+    <h2>Sales Chart</h2>
+    <canvas id="salesChart"></canvas>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
